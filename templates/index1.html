@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    h1,h2 {text-align: center;
+    }
+    h1 {
+      text-shadow: 2px 2px 5px red;
+    }
+    p
+     {
+       text-align: center;
+
+      }
+      body {
+        text-align: center;
+    button {
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    </style>
+    <title> fruit detection system </title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body >
+{% block content %}  
+<div  class="bg-image" style=" background-image: url('https://picfiles.alphacoders.com/532/532037.jpg');
+    height: 1000px;
+    width: 100%;
+  "
+  background-repeat: no-repeat;
+>
+<h1><b style="color: red;"> FRUIT QUALITY DETECTECTION </b></h1>   
+<div class="container">
+
+  <!--Simple Form-->
+  <h2 class="my-4">Upload Image for Testing</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="my-3" style="text-align: center">
+      <p><center><input type="file" name="upload" accept="image/*"></center></p>
+    
+        <br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+
+  <!--See Image Uploaded-->
+  <h2 class="my-4">Uploaded Image</h2>
+  <div class="row">
+    {% if file_url %}
+    <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+     <center> <img src="{{ file_url }}" width="400" height="400" class="img-fluid"></center>      
+      <br>
+      <!-- <img src=r"https://picfiles.alphacoders.com/532/532037.jpg">  -->
+      <br>
+      
+      <a class="btn btn-dark my-4" href="/" style="color : white ; font-size:larger" >Return to Homepage</a>
+      
+    {% else %}
+    <p>No Image Selected.</p>
+    {% endif %}
+  </div>
+  <!-- {{predictions}} -->
+  <p style="color: red; font-size:x-large;">{{predictions}}</p>
+</div>
+{% endblock %}
+<p><a href="nutritions"  style="color: white; font-size:large"> Nutritions Page </a></p>
+</div>
+
+</body>
+</html>
