@@ -18,3 +18,6 @@
     and gives the output after properly detecting the fruit and gives the output.
  ## System Architecture 
    ![image](https://github.com/nachiket5/fruit-image-classification/assets/46212104/3169465f-8c85-4bfa-b022-71be81872cec)
+
+## dataset for data Pre-processing
+   https://www.kaggle.com/datasets/moltean/fruits
